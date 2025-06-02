@@ -187,9 +187,6 @@ body {
   .nav-toggle {
     display: block;
   }
-}
-/* Responsive */
-@media (max-width: 600px) {
   .dashboard-container {
     padding: 1rem;
   }
