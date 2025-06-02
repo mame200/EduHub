@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EduHub - Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="dashboard.html" class="logo">EduHub</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      &#9776;
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="dashboard.html" class="active">Dashboard</a></li>
+      <li><a href="chat.html">Chat</a></li>
+      <li><a href="explainer.html">Explainer</a></li>
+      <li><a href="profile.html">Profilo Assistant</a></li>
+      <li><a href="index.html" id="logout">Log Out</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <section class="dashboard-welcome">
+      <h1>Welcome, [Student Name]!</h1>
+      <p>Here’s a quick overview of your learning progress and upcoming tasks.</p>
+    </section>
+
+    <section class="dashboard-cards">
+      <div class="card">
+        <h2>AI Assistant</h2>
+        <p>Need help? Ask your AI assistant anytime.</p>
+        <a href="ai-assistant.html" class="btn btn-primary">Go to AI Assistant</a>
+      </div>
+
+      <div class="card">
+        <h2>Explainer Hub</h2>
+        <p>Upload materials and get interactive concept visuals.</p>
+        <a href="explainer.html" class="btn btn-primary">Explore Explainer Hub</a>
+      </div>
+
+      <div class="card">
+        <h2>Chat</h2>
+        <p>Chat and collaborate with your study groups.</p>
+        <a href="chat.html" class="btn btn-primary">Open Chat</a>
+      </div>
+
+      <div class="card">
+        <h2>Profilo Assistant</h2>
+        <p>Track your skills and achievements for your future.</p>
+        <a href="profile.html" class="btn btn-primary">View Profile</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 EduHub. All rights reserved.</p>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+  <script>
+  window.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "signin.html";
+    }
+  });
+ </script>
+</body>
+</html>

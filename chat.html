@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EduHub - Student Chat</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="dashboard.html" class="logo">EduHub</a>
+    <ul class="nav-links">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="chat.html" class="active">Chat</a></li>
+      <li><a href="explainer.html">Explainer</a></li>
+      <li><a href="profile.html">Profilo</a></li>
+      <li><a href="index.html">Log Out</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <section class="chat-section">
+      <div class="chat-sidebar">
+        <h3>Chats</h3>
+        <ul id="chat-users">
+          <li class="active">AI Assistant</li>
+          <li>Study Group A</li>
+          <li>Physics Buddy</li>
+        </ul>
+      </div>
+
+      <div class="chat-main">
+        <div class="chat-header">
+          <h3 id="chat-title">AI Assistant</h3>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+          <!-- Chat messages will appear here -->
+        </div>
+
+        <form id="chat-form" class="chat-form">
+          <input type="text" id="chat-input" placeholder="Type a message..." required />
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 EduHub. All rights reserved.</p>
+  </footer>
+
+  <script src="js/chat.js"></script>
+</body>
+</html>
