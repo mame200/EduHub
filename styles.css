@@ -1,6 +1,4 @@
-/* ======================
-   RESET & BASE STYLES
-====================== */
+/* Reset & Base */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,30 +6,18 @@
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   background-color: #f9fafb;
   color: #222;
 }
 
-main.main-content {
-  flex-grow: 1;
-  max-width: 1100px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-/* ======================
-   NAVIGATION
-====================== */
+/* Navbar */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #2563eb;
+  background-color: #2563eb; /* blue-600 */
   padding: 1rem 2rem;
   color: white;
   position: sticky;
@@ -62,21 +48,10 @@ main.main-content {
 }
 
 .nav-links li a:hover {
-  background-color: #1e40af;
+  background-color: #1e40af; /* blue-800 */
 }
 
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
-}
-
-/* ======================
-   BUTTONS
-====================== */
+/* Buttons */
 .btn {
   cursor: pointer;
   border: none;
@@ -88,24 +63,22 @@ main.main-content {
   display: inline-block;
 }
 
-.btn-primary,
-#explain-btn {
-  background-color: #3b82f6;
+.btn-primary, #explain-btn {
+  background-color: #3b82f6; /* blue-500 */
   color: white;
 }
 
-.btn-primary:hover,
-#explain-btn:hover {
-  background-color: #2563eb;
+.btn-primary:hover, #explain-btn {
+  background-color: #2563eb; /* blue-600 */
 }
 
 .btn-secondary {
-  background-color: #e0e7ff;
+  background-color: #e0e7ff; /* blue-100 */
   color: #2563eb;
 }
 
 .btn-secondary:hover {
-  background-color: #c7d2fe;
+  background-color: #c7d2fe; /* blue-200 */
 }
 
 .btn-large {
@@ -114,122 +87,151 @@ main.main-content {
   margin-top: 1rem;
 }
 
-/* ======================
-   HERO / WELCOME
-====================== */
-.welcome-main,
-.dashboard-welcome {
+/* Mobile Nav Toggle */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Main Content */
+.welcome-main {
   max-width: 1100px;
   margin: 2rem auto;
   padding: 0 1rem;
+}
+
+.hero {
   text-align: center;
+  margin-bottom: 3rem;
 }
 
 .hero h1 {
   font-size: 2.75rem;
   margin-bottom: 0.5rem;
-  color: #1e3a8a;
+  color: #1e3a8a; /* blue-900 */
 }
 
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: #4b5563;
+  color: #4b5563; /* gray-600 */
 }
 
-/* ======================
-   FEATURES
-====================== */
+/* Features */
 .features h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: #1e40af;
+  color: #1e40af; /* blue-800 */
 }
 
-.feature-cards,
-.dashboard-cards,
-.profile-cards {
+.feature-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
-  max-width: 1000px;
-  margin: auto;
-  padding: 0 1rem 3rem;
 }
 
 .card {
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  background-color: white;
   padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
   text-align: center;
-  transition: transform 0.2s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgb(0 0 0 / 0.15);
 }
 
-.card h2,
 .card h3 {
-  margin-bottom: 0.5rem;
-  color: #1d4ed8;
+  color: #1d4ed8; /* blue-700 */
+  margin-bottom: 0.7rem;
 }
 
 .card p {
-  font-size: 0.95rem;
-  color: #374151;
-  margin-bottom: 1rem;
+  color: #374151; /* gray-700 */
+  font-size: 1rem;
 }
 
-/* ======================
-   FOOTER
-====================== */
+/* Footer */
 .footer {
   text-align: center;
   padding: 1rem;
-  background-color: #1e40af;
+  background-color: #1e40af; /* blue-800 */
+  color: white;
+  margin-top: 4rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #2563eb;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 180px;
+    border-radius: 0 0 0 8px;
+    padding: 1rem;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}
+/* Sticky footer layout */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f9fafb;
+  color: #222;
+}
+
+main.main-content {
+  flex-grow: 1;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Footer styles remain the same but remove margin-top */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #1e40af; /* blue-800 */
   color: white;
 }
-
-/* ======================
-   AUTH FORMS
-====================== */
-.auth-section,
-.contact-section,
-.ai-assistant,
-.explainer-hub,
-.profile-section {
-  max-width: 800px;
-  margin: 2rem auto;
+/* Contact form styles */
+.contact-section {
+  max-width: 600px;
+  margin: 0 auto;
   padding: 1rem;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.auth-section {
-  max-width: 400px;
-}
-
-.auth-section h1 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-form {
+.contact-section form {
   display: flex;
   flex-direction: column;
 }
 
-label {
+.contact-section label {
   margin-top: 1rem;
   font-weight: 600;
 }
 
-input,
-textarea {
+.contact-section input,
+.contact-section textarea {
   margin-top: 0.25rem;
   padding: 0.5rem;
   border: 1px solid #ccc;
@@ -238,13 +240,51 @@ textarea {
   font-family: inherit;
 }
 
-textarea {
+.contact-section textarea {
   resize: vertical;
   min-height: 100px;
 }
 
-.auth-section button,
 .contact-section button {
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.auth-section {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+}
+
+.auth-section h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.auth-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-section label {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.auth-section input {
+  margin-top: 0.25rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.auth-section button {
   margin-top: 1.5rem;
   padding: 0.75rem;
   font-size: 1.1rem;
@@ -265,30 +305,133 @@ textarea {
 .switch-auth a:hover {
   text-decoration: underline;
 }
-
-/* ======================
-   DASHBOARD & CHAT
-====================== */
-.dashboard-container {
-  padding: 2rem;
-  max-width: 1200px;
-  margin: auto;
+.dashboard-welcome {
+  max-width: 800px;
+  margin: 2rem auto 1.5rem auto;
+  padding: 0 1rem;
+  text-align: center;
 }
 
-.dashboard-grid {
+.dashboard-cards {
+  max-width: 1000px;
+  margin: 0 auto 3rem auto;
+  padding: 0 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
+.dashboard-cards .card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dashboard-cards .card h2 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: #1e40af;
+}
+
+.dashboard-cards .card p {
+  flex-grow: 1;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.dashboard-cards .card a.btn {
+  align-self: flex-start;
+}
+.ai-assistant {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.chat-window {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1rem;
+  height: 300px;
+  overflow-y: auto;
+  background: #f9f9f9;
+  margin-bottom: 1rem;
+}
+
+.chat-message {
+  margin-bottom: 0.75rem;
+}
+
+.chat-message.user {
+  text-align: right;
+  color: #1e40af;
+}
+
+.chat-message.ai {
+  text-align: left;
+  color: #333;
+}
+
+#chat-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#user-input {
+  flex: 1;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.explainer-hub {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.explainer-hub textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+.file-upload {
+  margin-bottom: 1rem;
+}
+
+#visual-output {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #f1f5f9;
+  border-radius: 6px;
+  min-height: 100px;
+  color: #1e293b;
+  font-size: 1rem;
+}
 .chat-section {
   display: flex;
   max-width: 1200px;
   margin: 2rem auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
+  background: white;
 }
 
 .chat-sidebar {
@@ -344,42 +487,30 @@ textarea {
   border-top: 1px solid #ddd;
 }
 
-#chat-input,
-#user-input {
+#chat-input {
   flex: 1;
-  padding: 0.6rem;
+  padding: 0.7rem;
   font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.chat-window {
-  height: 300px;
-  overflow-y: auto;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  background: #f9f9f9;
-  margin-bottom: 1rem;
   border-radius: 6px;
+  margin-right: 0.5rem;
+}
+.profile-section {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.chat-message {
-  margin-bottom: 0.75rem;
+.profile-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
-.chat-message.user {
-  text-align: right;
-  color: #1e40af;
-}
-
-.chat-message.ai {
-  text-align: left;
-  color: #333;
-}
-
-/* ======================
-   PROFILE & PROGRESS
-====================== */
 .profile-card {
   background: #f1f5f9;
   border-radius: 8px;
@@ -393,9 +524,9 @@ textarea {
 .progress-bar {
   background: #e2e8f0;
   border-radius: 6px;
-  height: 24px;
   margin-bottom: 0.5rem;
   overflow: hidden;
+  height: 24px;
 }
 
 .progress-bar span {
@@ -407,42 +538,3 @@ textarea {
   line-height: 24px;
 }
 
-/* ======================
-   RESPONSIVE STYLES
-====================== */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #2563eb;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 180px;
-    border-radius: 0 0 0 8px;
-    padding: 1rem;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-toggle {
-    display: block;
-  }
-
-  .dashboard-container,
-  .card {
-    padding: 1rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .dashboard-container {
-    padding: 1rem;
-  }
-
-  .card {
-    padding: 1rem;
-  }
-}
