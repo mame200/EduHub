@@ -1,4 +1,6 @@
-/* Reset & Base */
+/* ======================
+   RESET & BASE STYLES
+====================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,18 +8,30 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   background-color: #f9fafb;
   color: #222;
 }
 
-/* Navbar */
+main.main-content {
+  flex-grow: 1;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* ======================
+   NAVIGATION
+====================== */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #2563eb; /* blue-600 */
+  background-color: #2563eb;
   padding: 1rem 2rem;
   color: white;
   position: sticky;
@@ -48,10 +62,21 @@ body {
 }
 
 .nav-links li a:hover {
-  background-color: #1e40af; /* blue-800 */
+  background-color: #1e40af;
 }
 
-/* Buttons */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* ======================
+   BUTTONS
+====================== */
 .btn {
   cursor: pointer;
   border: none;
@@ -63,22 +88,24 @@ body {
   display: inline-block;
 }
 
-.btn-primary, #explain-btn {
-  background-color: #3b82f6; /* blue-500 */
+.btn-primary,
+#explain-btn {
+  background-color: #3b82f6;
   color: white;
 }
 
-.btn-primary:hover, #explain-btn {
-  background-color: #2563eb; /* blue-600 */
+.btn-primary:hover,
+#explain-btn:hover {
+  background-color: #2563eb;
 }
 
 .btn-secondary {
-  background-color: #e0e7ff; /* blue-100 */
+  background-color: #e0e7ff;
   color: #2563eb;
 }
 
 .btn-secondary:hover {
-  background-color: #c7d2fe; /* blue-200 */
+  background-color: #c7d2fe;
 }
 
 .btn-large {
@@ -87,183 +114,103 @@ body {
   margin-top: 1rem;
 }
 
-/* Mobile Nav Toggle */
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
-}
-
-/* Main Content */
-.welcome-main {
+/* ======================
+   HERO / WELCOME
+====================== */
+.welcome-main,
+.dashboard-welcome {
   max-width: 1100px;
   margin: 2rem auto;
   padding: 0 1rem;
-}
-
-.hero {
   text-align: center;
-  margin-bottom: 3rem;
 }
 
 .hero h1 {
   font-size: 2.75rem;
   margin-bottom: 0.5rem;
-  color: #1e3a8a; /* blue-900 */
+  color: #1e3a8a;
 }
 
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: #4b5563; /* gray-600 */
+  color: #4b5563;
 }
 
-/* Features */
+/* ======================
+   FEATURES
+====================== */
 .features h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: #1e40af; /* blue-800 */
+  color: #1e40af;
 }
 
-.feature-cards {
+.feature-cards,
+.dashboard-cards,
+.profile-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 1rem 3rem;
 }
 
 .card {
-  background-color: white;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
   text-align: center;
-  transition: box-shadow 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .card:hover {
-  box-shadow: 0 6px 15px rgb(0 0 0 / 0.15);
+  transform: translateY(-5px);
 }
 
+.card h2,
 .card h3 {
-  color: #1d4ed8; /* blue-700 */
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.5rem;
+  color: #1d4ed8;
 }
 
 .card p {
-  color: #374151; /* gray-700 */
-  font-size: 1rem;
+  font-size: 0.95rem;
+  color: #374151;
+  margin-bottom: 1rem;
 }
 
-/* Footer */
+/* ======================
+   FOOTER
+====================== */
 .footer {
   text-align: center;
   padding: 1rem;
-  background-color: #1e40af; /* blue-800 */
-  color: white;
-  margin-top: 4rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #2563eb;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 180px;
-    border-radius: 0 0 0 8px;
-    padding: 1rem;
-  }
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-toggle {
-    display: block;
-  }
-  .dashboard-container {
-    padding: 1rem;
-  }
-  .card {
-    padding: 1rem;
-  }
-}
-/* Sticky footer layout */
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  background-color: #f9fafb;
-  color: #222;
-}
-
-main.main-content {
-  flex-grow: 1;
-  max-width: 1100px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-/* Footer styles remain the same but remove margin-top */
-.footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #1e40af; /* blue-800 */
+  background-color: #1e40af;
   color: white;
 }
-/* Contact form styles */
-.contact-section {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 1rem;
-}
 
-.contact-section form {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-section label {
-  margin-top: 1rem;
-  font-weight: 600;
-}
-
-.contact-section input,
-.contact-section textarea {
-  margin-top: 0.25rem;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-family: inherit;
-}
-
-.contact-section textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-.contact-section button {
-  margin-top: 1.5rem;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  cursor: pointer;
-}
-.auth-section {
-  max-width: 400px;
+/* ======================
+   AUTH FORMS
+====================== */
+.auth-section,
+.contact-section,
+.ai-assistant,
+.explainer-hub,
+.profile-section {
+  max-width: 800px;
   margin: 2rem auto;
   padding: 1rem;
   background: white;
-  border-radius: 6px;
-  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.auth-section {
+  max-width: 400px;
 }
 
 .auth-section h1 {
@@ -271,17 +218,18 @@ main.main-content {
   margin-bottom: 1.5rem;
 }
 
-.auth-section form {
+form {
   display: flex;
   flex-direction: column;
 }
 
-.auth-section label {
+label {
   margin-top: 1rem;
   font-weight: 600;
 }
 
-.auth-section input {
+input,
+textarea {
   margin-top: 0.25rem;
   padding: 0.5rem;
   border: 1px solid #ccc;
@@ -290,7 +238,13 @@ main.main-content {
   font-family: inherit;
 }
 
-.auth-section button {
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.auth-section button,
+.contact-section button {
   margin-top: 1.5rem;
   padding: 0.75rem;
   font-size: 1.1rem;
@@ -311,133 +265,30 @@ main.main-content {
 .switch-auth a:hover {
   text-decoration: underline;
 }
-.dashboard-welcome {
-  max-width: 800px;
-  margin: 2rem auto 1.5rem auto;
-  padding: 0 1rem;
-  text-align: center;
+
+/* ======================
+   DASHBOARD & CHAT
+====================== */
+.dashboard-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.dashboard-cards {
-  max-width: 1000px;
-  margin: 0 auto 3rem auto;
-  padding: 0 1rem;
+.dashboard-grid {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
-.dashboard-cards .card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.dashboard-cards .card h2 {
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-  color: #1e40af;
-}
-
-.dashboard-cards .card p {
-  flex-grow: 1;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  color: #444;
-}
-
-.dashboard-cards .card a.btn {
-  align-self: flex-start;
-}
-.ai-assistant {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.chat-window {
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 1rem;
-  height: 300px;
-  overflow-y: auto;
-  background: #f9f9f9;
-  margin-bottom: 1rem;
-}
-
-.chat-message {
-  margin-bottom: 0.75rem;
-}
-
-.chat-message.user {
-  text-align: right;
-  color: #1e40af;
-}
-
-.chat-message.ai {
-  text-align: left;
-  color: #333;
-}
-
-#chat-form {
-  display: flex;
-  gap: 0.5rem;
-}
-
-#user-input {
-  flex: 1;
-  padding: 0.6rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-.explainer-hub {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.explainer-hub textarea {
-  width: 100%;
-  padding: 1rem;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  resize: vertical;
-}
-
-.file-upload {
-  margin-bottom: 1rem;
-}
-
-#visual-output {
-  margin-top: 2rem;
-  padding: 1rem;
-  background: #f1f5f9;
-  border-radius: 6px;
-  min-height: 100px;
-  color: #1e293b;
-  font-size: 1rem;
-}
 .chat-section {
   display: flex;
   max-width: 1200px;
   margin: 2rem auto;
+  background: white;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
-  background: white;
 }
 
 .chat-sidebar {
@@ -493,30 +344,42 @@ main.main-content {
   border-top: 1px solid #ddd;
 }
 
-#chat-input {
+#chat-input,
+#user-input {
   flex: 1;
-  padding: 0.7rem;
+  padding: 0.6rem;
   font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 6px;
-  margin-right: 0.5rem;
+  border-radius: 4px;
 }
-.profile-section {
-  max-width: 1000px;
-  margin: 2rem auto;
+
+.chat-window {
+  height: 300px;
+  overflow-y: auto;
   padding: 1rem;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  margin-bottom: 1rem;
+  border-radius: 6px;
 }
 
-.profile-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
+.chat-message {
+  margin-bottom: 0.75rem;
 }
 
+.chat-message.user {
+  text-align: right;
+  color: #1e40af;
+}
+
+.chat-message.ai {
+  text-align: left;
+  color: #333;
+}
+
+/* ======================
+   PROFILE & PROGRESS
+====================== */
 .profile-card {
   background: #f1f5f9;
   border-radius: 8px;
@@ -530,9 +393,9 @@ main.main-content {
 .progress-bar {
   background: #e2e8f0;
   border-radius: 6px;
+  height: 24px;
   margin-bottom: 0.5rem;
   overflow: hidden;
-  height: 24px;
 }
 
 .progress-bar span {
@@ -544,3 +407,42 @@ main.main-content {
   line-height: 24px;
 }
 
+/* ======================
+   RESPONSIVE STYLES
+====================== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #2563eb;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 180px;
+    border-radius: 0 0 0 8px;
+    padding: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .dashboard-container,
+  .card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+}
