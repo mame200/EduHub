@@ -4,52 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EduHub - Dashboard</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <nav class="navbar">
-    <a href="dashboard.html" class="logo">EduHub</a>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-      &#9776;
-    </button>
+    <a href="index.html" class="logo">EduHub</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="dashboard.html" class="active">Dashboard</a></li>
-      <li><a href="chat.html">Chat</a></li>
-      <li><a href="explainer.html">Explainer</a></li>
-      <li><a href="profile.html">Profilo Assistant</a></li>
-      <li><a href="index.html" id="logout">Log Out</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#" onclick="logout()">Logout</a></li>
     </ul>
   </nav>
 
-  <main class="main-content">
-    <section class="dashboard-welcome">
-      <h1>Welcome, [Student Name]!</h1>
-      <p>Here’s a quick overview of your learning progress and upcoming tasks.</p>
+  <main class="dashboard-container">
+    <section class="welcome-section">
+      <h1>Welcome to EduHub</h1>
+      <p>Your learning assistant is here to help you thrive.</p>
     </section>
 
-    <section class="dashboard-cards">
+    <section class="dashboard-grid">
       <div class="card">
         <h2>AI Assistant</h2>
-        <p>Need help? Ask your AI assistant anytime.</p>
-        <a href="ai-assistant.html" class="btn btn-primary">Go to AI Assistant</a>
+        <p>Ask questions and get guidance with your studies.</p>
+        <a href="#" class="btn">Open Assistant</a>
       </div>
-
       <div class="card">
-        <h2>Explainer Hub</h2>
-        <p>Upload materials and get interactive concept visuals.</p>
-        <a href="explainer.html" class="btn btn-primary">Explore Explainer Hub</a>
+        <h2>Concept Explainer</h2>
+        <p>Visualize and understand hard topics from your books.</p>
+        <a href="#" class="btn">Explain Concept</a>
       </div>
-
       <div class="card">
         <h2>Chat</h2>
-        <p>Chat and collaborate with your study groups.</p>
-        <a href="chat.html" class="btn btn-primary">Open Chat</a>
+        <p>Connect with classmates in a Telegram-style chat.</p>
+        <a href="#" class="btn">Join Chat</a>
       </div>
-
       <div class="card">
-        <h2>Profilo Assistant</h2>
-        <p>Track your skills and achievements for your future.</p>
-        <a href="profile.html" class="btn btn-primary">View Profile</a>
+        <h2>Profile Skills</h2>
+        <p>Track your strengths and prepare for your future.</p>
+        <a href="#" class="btn">View Profile</a>
       </div>
     </section>
   </main>
@@ -58,6 +51,19 @@
     <p>© 2025 EduHub. All rights reserved.</p>
   </footer>
 
-  <script src="js/scripts.js"></script>
+  <script src="scripts.js"></script>
+  <script>
+    // Redirect if not logged in
+    window.addEventListener("DOMContentLoaded", () => {
+      if (localStorage.getItem("loggedIn") !== "true") {
+        window.location.href = "signin.html";
+      }
+    });
+
+    function logout() {
+      localStorage.setItem("loggedIn", "false");
+      window.location.href = "signin.html";
+    }
+  </script>
 </body>
 </html>
