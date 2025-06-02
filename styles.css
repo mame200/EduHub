@@ -188,6 +188,15 @@ body {
     display: block;
   }
 }
+/* Responsive */
+@media (max-width: 600px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+  .card {
+    padding: 1rem;
+  }
+}
 /* Sticky footer layout */
 body {
   display: flex;
